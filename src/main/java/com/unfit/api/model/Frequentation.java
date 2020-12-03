@@ -13,8 +13,12 @@ public class Frequentation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idFrequentation;
+
+    @OneToOne(mappedBy = "frequentation")
+    private Session session;
     private int nombreBaigneur;
     private int nombrePratiquantNautique;
     private int nombreBateaux;
+
 
 }
