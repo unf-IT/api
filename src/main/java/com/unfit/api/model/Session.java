@@ -14,7 +14,10 @@ public class Session {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "frequentation_id", referencedColumnName = "idFrequentation")
     private Frequentation frequentation;
-    private Long idWaterman;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "waterman_id", referencedColumnName = "idWaterman")
+    private Waterman waterman;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "prelevement_id", referencedColumnName = "idPrelevement")
