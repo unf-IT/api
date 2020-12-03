@@ -1,6 +1,5 @@
 package com.unfit.api.model;
 
-import jdk.jfr.DataAmount;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,7 +15,10 @@ public class Session {
     @JoinColumn(name = "frequentation_id", referencedColumnName = "idFrequentation")
     private Frequentation frequentation;
     private Long idWaterman;
-    private Long idPrelevement;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "prelevement_id", referencedColumnName = "idPrelevement")
+    private Prelevement prelevement;
 
 
 }
