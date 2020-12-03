@@ -30,13 +30,7 @@ public class FrequentationController {
         log.debug("IN");
         return frequentationConverter.entityToDTO((List<Frequentation>) frequentationRepository.findAll());
     }
-
-    @GetMapping("/{id}")
-    public FrequentationDTO findByID(@PathVariable Long id){
-        log.debug("IN");
-        return frequentationConverter.entityToDTO(frequentationRepository.findById(id).orElseThrow());
-    }
-
+    
     @PostMapping
     public void createFrequentation(@RequestBody FrequentationDTO frequentationDTO){
         log.debug("IN");
