@@ -9,15 +9,14 @@ import java.util.Date;
 
 @Entity
 @Data
-@Table
+@Table(name="WATERMAN")
 public class Waterman {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long idWaterman;
 
-    @OneToOne(mappedBy = "waterman")
-    private Session session;
 
     private String ville;
     private String spot;

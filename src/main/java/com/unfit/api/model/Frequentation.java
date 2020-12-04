@@ -6,15 +6,14 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table
+@Table(name="FREQUENTATION")
 public class Frequentation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="ID")
     private Long idFrequentation;
 
-    @OneToOne(mappedBy = "frequentation")
-    private Session session;
     private int nombreBaigneur;
     private int nombrePratiquantNautique;
     private int nombreBateaux;

@@ -1,8 +1,6 @@
 package com.unfit.api.converter;
 
-import com.unfit.api.dto.FrequentationDTO;
 import com.unfit.api.dto.PrelevementDTO;
-import com.unfit.api.model.Frequentation;
 import com.unfit.api.model.Prelevement;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

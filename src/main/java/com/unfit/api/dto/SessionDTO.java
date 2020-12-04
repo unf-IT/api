@@ -2,44 +2,35 @@ package com.unfit.api.dto;
 
 public class SessionDTO {
 
-    private Long idFrequentation;
-    private Long idWaterman;
-    private Long idPrelevement;
+    private FrequentationDTO idFrequentation;
+    private WatermanDTO idWaterman;
+    private PrelevementDTO idPrelevement;
 
     public SessionDTO(){
         super();
     }
 
-    public Long getIdFrequentation() {
+    public FrequentationDTO getIdFrequentation() {
         return idFrequentation;
     }
 
-    public void setIdFrequentation(Long idFrequentation) {
+    public void setIdFrequentation(FrequentationDTO idFrequentation) {
         this.idFrequentation = idFrequentation;
     }
 
-    public Long getIdWaterman() {
+    public WatermanDTO getIdWaterman() {
         return idWaterman;
     }
 
-    public void setIdWaterman(Long idWaterman) {
+    public void setIdWaterman(WatermanDTO idWaterman) {
         this.idWaterman = idWaterman;
     }
 
-    public Long getIdPrelevement() {
+    public PrelevementDTO getIdPrelevement() {
         return idPrelevement;
     }
 
-    public void setIdPrelevement(Long idPrelevement) {
+    public void setIdPrelevement(PrelevementDTO idPrelevement) {
         this.idPrelevement = idPrelevement;
-    }
-
-    @Override
-    public String toString() {
-        return "SessionDTO{" +
-                "idFrequentation=" + idFrequentation +
-                ", idWaterman=" + idWaterman +
-                ", idPrelevement=" + idPrelevement +
-                '}';
     }
 }

@@ -2,7 +2,6 @@ package com.unfit.api.controllers;
 
 import com.unfit.api.configuration.SwaggerConfig;
 import com.unfit.api.converter.SessionConverter;
-import com.unfit.api.dto.FrequentationDTO;
 import com.unfit.api.dto.SessionDTO;
 import com.unfit.api.model.Session;
 import com.unfit.api.repositories.SessionRepository;

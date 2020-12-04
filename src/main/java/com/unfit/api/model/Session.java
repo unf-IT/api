@@ -11,16 +11,16 @@ public class Session {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idSession;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "frequentation_id", referencedColumnName = "idFrequentation")
+    @ManyToOne(cascade = {CascadeType.MERGE})
+    @JoinColumn(name="FREQUENTATION_ID")
     private Frequentation frequentation;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "waterman_id", referencedColumnName = "idWaterman")
+    @ManyToOne(cascade = {CascadeType.MERGE})
+    @JoinColumn(name="WATERMAN_ID")
     private Waterman waterman;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "prelevement_id", referencedColumnName = "idPrelevement")
+    @ManyToOne(cascade = {CascadeType.MERGE})
+    @JoinColumn(name="PRELEVEMENT_ID")
     private Prelevement prelevement;
 
 

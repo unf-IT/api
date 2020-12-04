@@ -2,9 +2,7 @@ package com.unfit.api.controllers;
 
 import com.unfit.api.configuration.SwaggerConfig;
 import com.unfit.api.converter.WatermanConverter;
-import com.unfit.api.dto.PrelevementDTO;
 import com.unfit.api.dto.WatermanDTO;
-import com.unfit.api.model.Prelevement;
 import com.unfit.api.model.Waterman;
 import com.unfit.api.repositories.WatermanRepository;
 import io.swagger.annotations.Api;
@@ -20,7 +18,7 @@ import java.util.List;
 @Api(tags = { SwaggerConfig.WATERMEN})
 public class WatermanController {
 
-    private static final Logger log = LoggerFactory.getLogger(FrequentationController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(WatermanController.class);
     private final WatermanRepository watermanRepository;
     private final WatermanConverter watermanConverter;
 
@@ -32,14 +30,14 @@ public class WatermanController {
     @ApiOperation(value = "La liste des mouillés :) .")
     @GetMapping
     public List<WatermanDTO> findAll(){
-        log.debug("IN");
+        LOG.debug("IN");
         return watermanConverter.entityToDTO((List<Waterman>) watermanRepository.findAll());
     }
 
     @ApiOperation(value = "Envoi des watermen :).")
     @PostMapping
     public void createWaterman(@RequestBody WatermanDTO watermanDTO){
-        log.debug("IN");
+        LOG.debug("IN");
         watermanRepository.save(watermanConverter.dtoToEntity(watermanDTO));
     }
 }

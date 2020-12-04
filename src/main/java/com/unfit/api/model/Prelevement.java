@@ -7,15 +7,14 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table
+@Table(name="PRELEVEMENT")
 public class Prelevement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long idPrelevement;
 
-    @OneToOne(mappedBy = "prelevement")
-    private Session session;
 
     private String pratiqueSportif;
     private Boolean cremeSolaire;
