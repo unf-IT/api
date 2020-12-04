@@ -2,6 +2,7 @@ package com.unfit.api.controllers;
 
 import com.unfit.api.configuration.SwaggerConfig;
 import com.unfit.api.converter.SessionConverter;
+import com.unfit.api.dto.FrequentationDTO;
 import com.unfit.api.dto.SessionDTO;
 import com.unfit.api.model.Session;
 import com.unfit.api.repositories.SessionRepository;
@@ -10,9 +11,7 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,5 +34,12 @@ public class SessionController {
     public List<SessionDTO> findAll(){
         LOG.debug("IN");
         return sessionConverter.entityToDTO((List<Session>) sessionRepository.findAll());
+    }
+
+    @ApiOperation(value = "Enregistrement d'une session.")
+    @PostMapping
+    public void createSession(@RequestBody SessionDTO sessionDTO){
+        LOG.debug("IN");
+        sessionRepository.save(sessionConverter.dtoToEntity(sessionDTO));
     }
 }
