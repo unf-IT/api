@@ -1,5 +1,6 @@
 package com.unfit.api.model;
 
+
 import lombok.Data;
 
 import javax.persistence.*;
