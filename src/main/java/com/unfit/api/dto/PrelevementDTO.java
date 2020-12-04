@@ -15,6 +15,8 @@ public class PrelevementDTO {
     private Boolean peinture;
     private String autre;
 
+    public PrelevementDTO(){ super(); }
+
     public PrelevementDTO(Long idPrelevement, String pratiqueSportif, Boolean cremeSolaire, Boolean deodorant, Boolean getCremeSolaire, Boolean cremeHydratante, Boolean maquillage, Boolean essence, Boolean cigarette, Boolean pesticide, Boolean peinture, String autre) {
         this.idPrelevement = idPrelevement;
         this.pratiqueSportif = pratiqueSportif;

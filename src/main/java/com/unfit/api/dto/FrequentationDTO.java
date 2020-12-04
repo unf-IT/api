@@ -7,6 +7,8 @@ public class FrequentationDTO {
     private int nombrePratiquantNautique;
     private int nombreBateaux;
 
+    public FrequentationDTO(){ super();}
+
     public FrequentationDTO(Long idFrequentation, int nombreBaigneur, int nombrePratiquantNautique, int nombreBateaux) {
         this.idFrequentation = idFrequentation;
         this.nombreBaigneur = nombreBaigneur;
