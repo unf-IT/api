@@ -6,6 +6,7 @@ import com.unfit.api.dto.SessionDTO;
 import com.unfit.api.model.Session;
 import com.unfit.api.repositories.SessionRepository;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class SessionController {
         this.sessionConverter = sessionConverter;
     }
 
+    @ApiOperation(value = "Récupère toutes les sessions.")
     @GetMapping
     public List<SessionDTO> findAll(){
         LOG.debug("IN");

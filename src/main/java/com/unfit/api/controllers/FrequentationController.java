@@ -6,6 +6,7 @@ import com.unfit.api.dto.FrequentationDTO;
 import com.unfit.api.model.Frequentation;
 import com.unfit.api.repositories.FrequentationRepository;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +29,14 @@ public class FrequentationController {
         this.frequentationRepository = frequentationRepository;
     }
 
+    @ApiOperation(value = "Récupère toutes les fréquentations.")
     @GetMapping
     public List<FrequentationDTO> findAll(){
         log.debug("IN");
         return frequentationConverter.entityToDTO((List<Frequentation>) frequentationRepository.findAll());
     }
 
+    @ApiOperation(value = "Envoi une fréquentation.")
     @PostMapping
     public void createFrequentation(@RequestBody FrequentationDTO frequentationDTO){
         log.debug("IN");
